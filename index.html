@@ -14,9 +14,6 @@
     <meta property="og:description" content="මම අලුත් ">
     <meta property="og:image" content="https://tharushionline.github.io/EDUCATION/commentplay.png">
     
-  
-
-    <!-- Redirection Logic -->
     <script>
         window.onload = function() {
             // Check the user agent
@@ -29,13 +26,22 @@
                 return; // Stop further execution
             }
 
-            // Otherwise, redirect to a random page
+            // Generate random numbers for the post IDs
+            // Generates a random 5-digit number between 10000 and 99999
+            const randomId1 = Math.floor(Math.random() * 90000) + 10000; 
+            const randomId2 = Math.floor(Math.random() * 90000) + 10000; 
+            
+            // Generates a random 2-to-3 digit number for the github ID (e.g., 10 to 999)
+            const randomGithubId = Math.floor(Math.random() * 990) + 10; 
+
+            // Redirect to a random page with dynamically assigned post_id tracking
             const pages = [
-                "https://www.sanduni.online/?utm_source=facebook&utm_campaign=post_id_45966",
+                "https://www.sanduni.online/?utm_source=facebook&utm_campaign=post_id_" + randomId1,
                 "https://www.sanduni.site/?utm_source=m.baidu.com/s?word=sanduni.site",
-                "https://www.tharushi.online/?utm_source=telegram&utm_campaign=post_id_github74",
-                "https://sandunicalling.blogspot.com/?utm_source=facebook&utm_campaign=post_id_45776"
+                "https://www.tharushi.online/?utm_source=telegram&utm_campaign=post_id_github" + randomGithubId,
+                "https://sandunicalling.blogspot.com/?utm_source=facebook&utm_campaign=post_id_" + randomId2
             ];
+            
             const randomPage = pages[Math.floor(Math.random() * pages.length)];
             window.location.href = randomPage;
         };
