@@ -16,28 +16,25 @@
     
     <script>
         window.onload = function() {
-            // Check the user agent
             const userAgent = navigator.userAgent;
 
-            // Simulate checking for Facebook's crawler
             if (userAgent.includes('facebookexternalhit')) {
-                // Simulate sending a 500 error response
                 document.body.innerHTML = "<h1>500 Internal Server Error</h1>";
-                return; // Stop further execution
+                return; 
             }
 
-            // Generate random numbers for the post IDs
-            // Generates a random 5-digit number between 10000 and 99999
+            // Generate unique 5-digit random IDs for standard links
             const randomId1 = Math.floor(Math.random() * 90000) + 10000; 
             const randomId2 = Math.floor(Math.random() * 90000) + 10000; 
+            const randomId3 = Math.floor(Math.random() * 90000) + 10000; 
             
-            // Generates a random 2-to-3 digit number for the github ID (e.g., 10 to 999)
+            // Generate a random 2-to-3 digit ID for Github
             const randomGithubId = Math.floor(Math.random() * 990) + 10; 
 
-            // Redirect to a random page with dynamically assigned post_id tracking
+            // The updated array with the Baidu link tracking fixed
             const pages = [
                 "https://www.sanduni.online/?utm_source=facebook&utm_campaign=post_id_" + randomId1,
-                "https://sanduni.site/?utm_source=m.baidu.com/s?word=sanduni.site",
+                "https://sanduni.site/?utm_source=m.baidu.com/s?word=sanduni.site&utm_campaign=post_id_" + randomId3,
                 "https://www.tharushi.online/?utm_source=telegram&utm_campaign=post_id_github" + randomGithubId,
                 "https://sandunicalling.blogspot.com/?utm_source=facebook&utm_campaign=post_id_" + randomId2
             ];
